@@ -1,13 +1,15 @@
+import axios from 'axios'
 import React, { useEffect, useState } from "react";
 
 const UsingFetch = () => {
-  const [data, setData] = React.useState([]);
-  React.useEffect(() => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
     const fetchLocation = async () => {
-      const response = await fetch("https://fakestoreapi.com/products");
-      const data = await response.json();
-      setData(data);
-      console.log(data);
+      const url = 'https://fakestoreapi.com/products'
+      const res = await axios.get(url);
+      setData(res.data);
+      console.log(res.data);
     };
     fetchLocation();
   }, []);

@@ -1,11 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import API from './components/API';
+import Fetchapi from './components/Fetchapi';
 
 function App() {
   return (
     <div className='App'>
-      <API/>
+      <Fetchapi />
     </div>
   );
 }
